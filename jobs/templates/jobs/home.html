@@ -1,14 +1,13 @@
 <!doctype html>
 <html lang="en">
-
+{% load staticfiles %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="../../../../favicon.ico">
 
-  <title>Album example for Bootstrap</title>
+  <title>Portfolio</title>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
@@ -19,15 +18,15 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Jino Thomas</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Jino Thomas</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link " href="#">Twitter</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
-          <a class="nav-item nav-link" href="#">Blog</a>
+          <a class="nav-item nav-link " href="http://google.com">Google</a>
+          <a class="nav-item nav-link" href="{% static 'portfolio_resume.pdf' %}">Resume</a>
+          <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
         </div>
       </div>
     </nav>
@@ -39,6 +38,7 @@
       <div class="container">
         <h1 class="jumbotron-heading">Hi, I am Jino Thomas</h1>
         <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+                <img src="{% static 'IMG_20180102_204807_312.jpg' %}" height="300" />
         <p>
           <a href="mailto:jinot92@gmail.com" class="btn btn-primary my-2">Email Me</a>
         </p>

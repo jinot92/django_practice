@@ -8,7 +8,7 @@
   <meta name="author" content="">
   <link rel="icon" href="../../../../favicon.ico">
 
-  <title>Blogs</title>
+  <title>{{blogs.title}}</title>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
@@ -35,19 +35,16 @@
 
   <main role="main">
     <div class="container">
-      <h1 class="text-center pt-3">Welcome to Nick's blog</h1>
-      <br /><br />
-      <h2>Latest Posts</h2>
-      <hr>
-      {%for blog in blogs.all%}
-      <a href="{% url 'detail' blog.id%}"><h3>{{blog.title}}</h3></a>
-      {{blog.pub_pretty}}
+
+      <h1 class ="text-center pt-3">{{blog.title}}</h1>
+        <p class="text-center">{{blog.pub_date}}</p>
+
+        <img class=".ing-fluid" src="{{blog.image.url}}" />
       <br />
-      <img class=".ing-fluid" src="{{blog.image.url}}" height=200 width=200/>
       <br />
-      <p>{{blog.summary}} ...</p>
+      <p>{{blog.body}} ...</p>
       <br />
-      {%endfor%}
+
   </main>
 
   <footer class="text-muted">
